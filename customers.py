@@ -17,3 +17,10 @@ customer["tier"] = "platinum"
 print(customer)
 del customer["email"]
 print(customer)
+# --- Exercise 3 ---
+email = customer.get("email", "no email on file")
+print(email)
+try:
+    print(customer["email"])
+except KeyError:
+    print("KeyError: email does not exist")
