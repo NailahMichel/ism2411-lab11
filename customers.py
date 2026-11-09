@@ -45,3 +45,27 @@ final_price = purchase_price - discount_amount
 print("Customer tier:", customer["tier"])
 print("Discount rate:", discount_rate * 100, "%")
 print("Final price: $", final_price)
+# --- Exercise 6 ---
+dict1 = {
+    "name": "Alice",
+    "tier": "platinum"
+}
+
+dict2 = {
+    "name": "Bob",
+    "tier": "silver"
+}
+
+dict3 = {
+    "name": "Charlie",
+    "tier": "gold"
+}
+customers = [dict1, dict2, dict3]
+for customer in customers:
+    name = customer["name"]
+    tier = customer["tier"]
+
+    discount_rate = tier_discounts.get(tier, 0)
+    discount_amount = 300 * discount_rate
+
+    print(f"{name} | {tier} | Discount: ${discount_amount:.2f}")
